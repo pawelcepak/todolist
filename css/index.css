@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+html, body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 15vh 1fr 10vh;
+      grid-template-rows: 15vh 1fr 10vh;
+  color: #A0F2C4;
+  background-color: #262522;
+}
+
+html header, html main, html footer, body header, body main, body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #02735E;
+}
+
+html header #time, body header #time {
+  font-size: 2.4rem;
+}
+
+html header h1, body header h1 {
+  font-size: 1.2rem;
+}
+
+html main #addTask, body main #addTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+}
+
+html main #addTask input[type=text], body main #addTask input[type=text] {
+  width: 100%;
+  margin: 10% 0;
+  padding: 3%;
+  color: white;
+  background-color: #02735E;
+  border: .5px solid #16F2B4;
+}
+
+html main #addTask .addIcon img, body main #addTask .addIcon img {
+  height: 32px;
+}
+
+html main #tasks, body main #tasks {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+}
+
+html main #tasks .activeTask, body main #tasks .activeTask {
+  color: #3eac0b;
+}
+
+html main #tasks .endTask, body main #tasks .endTask {
+  color: crimson;
+  margin-top: 10%;
+}
+
+html main #tasks .tAT, body main #tasks .tAT {
+  margin: 5% 0;
+  padding: 2%;
+  font-size: .9rem;
+  color: white;
+  background-color: #02735E;
+  border: .5px solid #16F2B4;
+}
+
+html main #options, body main #options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: row;
+}
+
+html main #options .opt, body main #options .opt {
+  width: 100%;
+  margin: 5%;
+  padding: 5%;
+  border: .8px solid #1ED9B7;
+}
+
+html main #options .opt img, body main #options .opt img {
+  height: 32px;
+}
+/*# sourceMappingURL=index.css.map */
