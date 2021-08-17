@@ -1,22 +1,33 @@
-let addTaskText = document.querySelector("#addTaskText");
-const addTask = document.querySelector(".addIcon");
-let activeTask = document.querySelector(".activeTask");
-let newDiv = null;
+let addTaskText = document.querySelector('#ati');
+const btnAddTask = document.querySelector('#btnAddTask');
+const taskProducts = document.querySelector('.taskProducts');
 
-const addTaskFunction = () => {
-    newDiv = document.createElement('div');
-    newDiv.classList.add('tAT');
-    newDiv.innerText = addTaskText.value;
+const errorAddTask = document.querySelector('.errorAddTask');
+
+
+
+
+btnAddTask.addEventListener('click', () => {
+    errorAddTask.style.display = 'none';
+    // create div element (addTask)
+    let newTaskItem = document.createElement('div');
+    newTaskItem.setAttribute('class', 'taskProduct');
+
+    // create p element (addTask)
+    let newPItem = document.createElement('p');
+    newPItem.setAttribute('class', 'taskProductP');
+
+
+
     if (addTaskText.value === "") {
-        alert("Nie możesz dodać pustego pola do zadań");
+        errorAddTask.style.display = 'block';
     } else {
-        activeTask.appendChild(newDiv);
+        // add element to html
+        newPItem.innerText = addTaskText.value;
+        newTaskItem.appendChild(newPItem);
+        taskProducts.appendChild(newTaskItem);
     }
+
+
     addTaskText.value = "";
-}
-
-
-
-
-
-addTask.addEventListener('click', addTaskFunction);
+});

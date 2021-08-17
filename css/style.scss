@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    background-color: #242222;
+    color: #e4e6b8;
+    font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+    #container {
+        display: grid;
+        grid-template-areas: 
+        "h"
+        "s"
+        "f"
+        ;
+        grid-template-rows: 15vh 75vh 10vh;
+        header, footer {
+            @include flex;
+            text-align: center;
+            background-color: #0d0c0c;
+        }
+        #tasks {
+            @include flex;
+            overflow: scroll;
+            text-align: center;
+            padding: 5%;
+            h4 {
+                margin: 5% 0;
+                font-size: 1.4rem;
+            }
+            .taskProducts {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                .taskProduct {
+                    .taskProductP {
+                        width: 95%;
+                        margin: 5% 0;
+                        padding: 4%;
+                        border: 1px solid #e4e6b8;
+                    }
+                }
+            }
+            .endTask {
+                margin-bottom: 5%;
+            }
+        }
+        .errorAddTask {
+            display: none;
+            color: #e20f0f;
+        }
+        #addTaskInput {
+            position: fixed;
+            left: 0;
+            bottom: 10vh;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 8%;
+            width: 100%;
+            background-color: #595959;
+            // border: 1px dotted blue;
+            label {
+                margin-left: 1.5%;
+            }
+            input {
+                margin-left: 3%;
+                padding: 2%;
+                width: 65%;
+                background-color: rgba(#000, 0);
+                border: 1px solid #e4e6b8;
+            }
+        }
+        footer {
+            p {
+                font-size: 0.9rem;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+header {grid-area: h;}
+.tasks {grid-area: s;}
+footer {grid-area: f;}

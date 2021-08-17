@@ -5,44 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zadania</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>To Do Lista</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <div id="time">18:06:38</div>
-        <h1>TO DO Lista</h1>
-        <script src="js/time.js"></script>
-    </header>
-    <main>
-        <div id="addTask">
-            <form>
-                <input type="text" name="addTask" id="addTaskText">
-            </form>
-            <div class="addIcon"><img src="img/add.png" alt=""></div>
-        </div>
-        <div id="tasks">
-            <p class="activeTask">ZADANIA W TRAKCIE</p>
-            <!-- <div class="tAT">BANANY</div>
-            <div class="tAT">JABŁKA</div>
-            <div class="tAT">MADAGASKAR</div> -->
 
-            <p class="endTask">ZADANIA ZAKOŃCZONE</p>
-            <!-- <div class="tAT">ASFALT</div>
-            <div class="tAT">AGRO</div>
-            <div class="tAT">FOTOWOLTAIKA</div> -->
-        </div>
-        <div id="options">
-            <div class="opt"><img src="img/accept.png" alt=""></div>
-            <div class="opt"><img src="img/add.png" alt=""></div>
-            <div class="opt"><img src="img/delete.png" alt=""></div>
-            <div class="opt"><img src="img/edit.png" alt=""></div>
-        </div>
-    </main>
-    <footer>
-        <p>Paweł Cepak 2021 || &copy;Wszelkie prawa zastrzeżone</p>
-    </footer>
+    <div id="container">
+        <header>
+            <h1>TO DO LISTA</h1>
+            <h4>Stwórz swoją własną listę</h4>
+        </header>
+        <section id="tasks">
+            <h4 class="tasksName">LISTA ZAKUPÓW</h4>
+            <div class="taskProducts">
+                <p class="errorAddTask">
+                    NIE MOŻNA DODAĆ PUSTEGO ZADANIA
+                </p>
+            </div>
+            <section id="addTaskInput">
+                <label id="btnAddTask">Dodaj zadanie: </label>
+                <input type="text" id="ati">
+            </section>
+        </section>
+        <footer>
+            <p>Paweł Cepak 2021</p>
+            <p>&copy; Wszelkie prawa zastrzeżone</p>
+        </footer>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
