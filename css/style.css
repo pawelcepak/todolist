@@ -80,7 +80,7 @@ html #container #tasks .taskProducts, body #container #tasks .taskProducts {
 
 html #container #tasks .taskProducts .taskProduct .taskProductP, body #container #tasks .taskProducts .taskProduct .taskProductP {
   width: 95%;
-  margin: 5% 0;
+  margin: 2.5% 0;
   padding: 4%;
   border: 1px solid #e4e6b8;
 }
@@ -112,16 +112,19 @@ html #container #addTaskInput, body #container #addTaskInput {
   background-color: #595959;
 }
 
-html #container #addTaskInput label, body #container #addTaskInput label {
-  margin-left: 1.5%;
-}
-
 html #container #addTaskInput input, body #container #addTaskInput input {
-  margin-left: 3%;
+  margin-left: 1%;
   padding: 2%;
   width: 65%;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #e4e6b8;
+}
+
+html #container #addTaskInput #addTITask, body #container #addTaskInput #addTITask {
+  margin-left: 1.5%;
+  margin-right: 2%;
+  padding: 2%;
+  background-color: dimgrey;
 }
 
 html #container footer p, body #container footer p {

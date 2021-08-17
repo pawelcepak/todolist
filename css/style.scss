@@ -54,7 +54,7 @@ html, body {
                 .taskProduct {
                     .taskProductP {
                         width: 95%;
-                        margin: 5% 0;
+                        margin: 2.5% 0;
                         padding: 4%;
                         border: 1px solid #e4e6b8;
                     }
@@ -78,16 +78,17 @@ html, body {
             height: 8%;
             width: 100%;
             background-color: #595959;
-            // border: 1px dotted blue;
-            label {
-                margin-left: 1.5%;
-            }
             input {
-                margin-left: 3%;
+                margin-left: 1%;
                 padding: 2%;
                 width: 65%;
                 background-color: rgba(#000, 0);
                 border: 1px solid #e4e6b8;
+            }
+            #addTITask {
+                margin-left: 1.5%; margin-right: 2%;
+                padding: 2%;
+                background-color: dimgrey;
             }
         }
         footer {
