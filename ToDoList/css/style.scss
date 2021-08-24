@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+@mixin flexOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    background-color: #242222;
+    color: #e4e6b8;
+    font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+    #container {
+        display: grid;
+        grid-template-areas: 
+        "h"
+        "s"
+        "a"
+        "f"
+        ;
+        grid-template-rows: 12vh 70vh 10vh 8vh;
+        header, footer {
+            @include flexOne;
+            text-align: center;
+            background-color: #0d0c0c;
+        }
+        #tasks {
+            display: grid;
+            grid-template-rows: 1fr;
+            overflow: scroll;
+            text-align: center;
+            padding: 5%;
+            h4 {
+                margin: 5% 0;
+                font-size: 1.4rem;
+            }
+            .productsList {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                .taskProduct {
+                    display: grid;
+                    grid-template-columns: 70% 25%;
+                    margin-top: 5%;
+                    .taskProductP {
+                        margin-right: 15%;
+                        padding: 5%;
+                        border: 1px solid #e4e6b8;
+                    }
+                    .optionsTasks {
+                        @include flexTwo;
+                        .optionTask {
+                            padding: 15%;
+                            border: 1px solid #e4e6b8;
+                        }
+                        .taskAccept, .taskTrash {
+                            margin-left: 10%;
+                        }
+                    }
+                }
+            }
+            .endTask {
+                margin-bottom: 5%;
+            }
+            .errorWrapper {
+                display: none;
+                color: #f30d0d;
+            }
+        }
+        #addTaskInput {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            background-color: #595959;
+            margin-top: 5%;
+            padding: 2%;
+            input {
+                margin-left: 1%;
+                padding: 2%;
+                width: 65%;
+                background-color: rgba(#000, 0);
+                color: #fff;
+                border: 1px solid #e4e6b8;
+            }
+            #addTITask {
+                margin-left: 1.5%; margin-right: 2%;
+                // padding: 2%;
+                background-color: dimgrey;
+            }
+        }
+        footer {
+            p {
+                font-size: 0.9rem;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+header {grid-area: h;}
+.tasks {grid-area: s;}
+#addTaskInput {grid-area: a;}
+footer {grid-area: f;}

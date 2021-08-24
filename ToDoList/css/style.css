@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+html {
+  background-color: #242222;
+  color: #e4e6b8;
+  font-family: 'Raleway', sans-serif;
+}
+
+html #container, body #container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "h" "s" "a" "f";
+  -ms-grid-rows: 12vh 70vh 10vh 8vh;
+      grid-template-rows: 12vh 70vh 10vh 8vh;
+}
+
+html #container header, html #container footer, body #container header, body #container footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #0d0c0c;
+}
+
+html #container #tasks, body #container #tasks {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  overflow: scroll;
+  text-align: center;
+  padding: 5%;
+}
+
+html #container #tasks h4, body #container #tasks h4 {
+  margin: 5% 0;
+  font-size: 1.4rem;
+}
+
+html #container #tasks .productsList, body #container #tasks .productsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+html #container #tasks .productsList .taskProduct, body #container #tasks .productsList .taskProduct {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 25%;
+      grid-template-columns: 70% 25%;
+  margin-top: 5%;
+}
+
+html #container #tasks .productsList .taskProduct .taskProductP, body #container #tasks .productsList .taskProduct .taskProductP {
+  margin-right: 15%;
+  padding: 5%;
+  border: 1px solid #e4e6b8;
+}
+
+html #container #tasks .productsList .taskProduct .optionsTasks, body #container #tasks .productsList .taskProduct .optionsTasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html #container #tasks .productsList .taskProduct .optionsTasks .optionTask, body #container #tasks .productsList .taskProduct .optionsTasks .optionTask {
+  padding: 15%;
+  border: 1px solid #e4e6b8;
+}
+
+html #container #tasks .productsList .taskProduct .optionsTasks .taskAccept, html #container #tasks .productsList .taskProduct .optionsTasks .taskTrash, body #container #tasks .productsList .taskProduct .optionsTasks .taskAccept, body #container #tasks .productsList .taskProduct .optionsTasks .taskTrash {
+  margin-left: 10%;
+}
+
+html #container #tasks .endTask, body #container #tasks .endTask {
+  margin-bottom: 5%;
+}
+
+html #container #tasks .errorWrapper, body #container #tasks .errorWrapper {
+  display: none;
+  color: #f30d0d;
+}
+
+html #container #addTaskInput, body #container #addTaskInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #595959;
+  margin-top: 5%;
+  padding: 2%;
+}
+
+html #container #addTaskInput input, body #container #addTaskInput input {
+  margin-left: 1%;
+  padding: 2%;
+  width: 65%;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  border: 1px solid #e4e6b8;
+}
+
+html #container #addTaskInput #addTITask, body #container #addTaskInput #addTITask {
+  margin-left: 1.5%;
+  margin-right: 2%;
+  background-color: dimgrey;
+}
+
+html #container footer p, body #container footer p {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: h;
+}
+
+.tasks {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: s;
+}
+
+#addTaskInput {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: a;
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: f;
+}
+/*# sourceMappingURL=style.css.map */
