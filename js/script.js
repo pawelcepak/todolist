@@ -3,13 +3,6 @@ const btnAddTask = document.querySelector('#addTITask');
 const errorWrapper = document.querySelector('.errorWrapper');
 const productsList = document.querySelector('.productsList');
 
-const edit = document.querySelector('.taskEdit');;
-const accept = document.querySelector('.taskAccept');;
-const trash = document.querySelector('.taskTrash');;
-
-let taskProductsP = document.querySelector('.taskProductP');
-let taskProduct = document.querySelector('.taskProduct');
-
 
 // Errors handling functions
 function showError(content) {
@@ -21,7 +14,7 @@ function clearError() {
 }
 
 // A function that adds objects
-function addTask(content) {
+function addTask() {
     clearError();
 
     if (addTaskText.value === '') {
@@ -44,18 +37,21 @@ function addTask(content) {
         // Editing a task
         let taskEdit = document.createElement('p');
         taskEdit.setAttribute('class', 'taskEdit');
+        taskEdit.innerText = 'E';
         // Editing the task
         let taskAccept = document.createElement('p');
         taskAccept.setAttribute('class', 'taskAccept');
+        taskAccept.innerText = 'A';
         // Deleting a task
         let taskTrash = document.createElement('p');
         taskTrash.setAttribute('class', 'taskTrash');
+        taskTrash.innerText = 'T';
 
         // Add element to html
         newPItem.innerText = addTaskText.value;
-        optionsTasks.appendChild(edit);
-        optionsTasks.appendChild(accept);
-        optionsTasks.appendChild(trash);
+        optionsTasks.appendChild(taskEdit);
+        optionsTasks.appendChild(taskAccept);
+        optionsTasks.appendChild(taskTrash);
         newTaskItem.appendChild(newPItem);
         newTaskItem.appendChild(optionsTasks);
         productsList.appendChild(newTaskItem);
@@ -65,20 +61,22 @@ function addTask(content) {
 }
 
 // Options that support the task
-function editTask() {
-    addTaskText.value = taskProductsP.innerText;
+function editTask(element) {
+    // console.log(element, element.parentNode.parentNode.querySelector('p').innerText);
+    addTaskText.value = element.parentNode.parentNode.querySelector('p').innerText;
     addTaskText.focus();
+    // wrocic do edycji tekstu (oobecnie dodaje jako nowy task)
     // alert('Edycja taska');
 }
-function acceptTask() {
-    taskProductsP.style.color = '#b1a5a2';
-    taskProductsP.style.textDecoration = 'line-through';
-    productsList.appendChild(taskProduct);
+function acceptTask(element) {
+    element.parentNode.parentNode.querySelector('p').style.color = '#b1a5a2';
+    element.parentNode.parentNode.querySelector('p').style.textDecoration = 'line-through';
     addTaskText.value = '';
+    // dodawanie zakonczonych na sam koniec - Wrocic do tego jak ogarne petle for
     // alert('Zakończenie taska');
 }
-function trashTask() {
-    taskProduct.remove();
+function trashTask(element) {
+    element.parentNode.parentNode.remove();
     addTaskText.value = '';
     // alert('Skasowanie taska');
 }
@@ -99,12 +97,20 @@ btnAddTask.addEventListener('click', () => {
     addTask(); //co ma byc contentem?????
 });
 
-edit.addEventListener('click', () => {
-    editTask();
+
+
+document.addEventListener('click', function (e) {
+    console.log(e);
+    if (e.target && e.target.classList.contains('taskEdit')) {
+        editTask(e.target);
+    } else if (e.target && e.target.classList.contains('taskTrash')) {
+        trashTask(e.target);
+    } else if (e.target && e.target.classList.contains('taskAccept')) {
+        acceptTask(e.target);
+    }
 });
-accept.addEventListener('click', () => {
-    acceptTask();
-});
-trash.addEventListener('click', () => {
-    trashTask();
-});
+
+// shift + alt + f
+
+// e - PointerEvenet
+//e.target.classList.contains - wywoluje na elemencie zdarzenie wyszukania celu, wyszukuje wszystkie class i czy jest element o class podanej w ()
